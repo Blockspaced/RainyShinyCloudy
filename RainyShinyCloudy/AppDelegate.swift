@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  RainyShinyCloudy
 //
-//  Created by Sandro Simes on 14/09/16.
+//  Created by smbss on 14/09/16.
 //  Copyright © 2016 smbss. All rights reserved.
 //
 
