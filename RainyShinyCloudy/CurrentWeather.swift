@@ -72,7 +72,7 @@ class CurrentWeather {
                     // Fetching the city name and make the first letter capitalized
                 if let name = dict["name"] as? String {
                     self._cityName = name.capitalized
-                    print("!DATA: \(self._cityName)")
+                    print("!DATA: \(self._cityName!)")
                 }
                 
                     // Fetching the weather dictionary from inside the dict and casting it correctly (as an array of dictionaries)
@@ -81,7 +81,7 @@ class CurrentWeather {
                         // Weather is an array of dicts and we only want the first entry and "main" is the key for the weather type
                     if let main = weather[0]["main"] as? String {
                         self._weatherType = main.capitalized
-                        print("!DATA: \(self._weatherType)")
+                        print("!DATA: \(self._weatherType!)")
                     }
                     
                 }
@@ -91,13 +91,13 @@ class CurrentWeather {
                     
                     if let currentTemperature = main["temp"] as? Double {
                         
-                        let kelvinToCelcius = (currentTemperature - 273.15)
+                        let kelvinToCelcius = round(currentTemperature - 273.15)
                         
 //                        let kelvinToFarenheitPreDivision = (currentTemperature * (9/5) - 459.67)
 //                        let kelvinToFarenheit = Double(round(10 * kelvinToFarenheitPreDivision/10))
 
                         self._currentTemp = kelvinToCelcius
-                        print("!DATA: \(self._currentTemp)")
+                        print("!DATA: \(self._currentTemp!)")
                     }
                 }
                 
