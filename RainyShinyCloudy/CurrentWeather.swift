@@ -64,7 +64,44 @@ class CurrentWeather {
             
                 // Every request has a response and every response has a result
             let result = response.result
-            print(response)
+            
+                // Creating a dictionary that will contain the value of the result
+                // It will be casted in the same format as the dictionary from the API (String: AnyObject)
+            if let dict = result.value as? Dictionary<String, AnyObject> {
+                
+                    // Fetching the city name and make the first letter capitalized
+                if let name = dict["name"] as? String {
+                    self._cityName = name.capitalized
+                    print("!DATA: \(self._cityName)")
+                }
+                
+                    // Fetching the weather dictionary from inside the dict and casting it correctly (as an array of dictionaries)
+                if let weather = dict["weather"] as? [Dictionary<String,AnyObject>] {
+                    
+                        // Weather is an array of dicts and we only want the first entry and "main" is the key for the weather type
+                    if let main = weather[0]["main"] as? String {
+                        self._weatherType = main.capitalized
+                        print("!DATA: \(self._weatherType)")
+                    }
+                    
+                }
+                
+                    // Accessing the other "main" dictionay that is one of the top parents and not inside the weather array
+                if let main = dict["main"] as? Dictionary<String,AnyObject> {
+                    
+                    if let currentTemperature = main["temp"] as? Double {
+                        
+                        let kelvinToCelcius = (currentTemperature - 273.15)
+                        
+//                        let kelvinToFarenheitPreDivision = (currentTemperature * (9/5) - 459.67)
+//                        let kelvinToFarenheit = Double(round(10 * kelvinToFarenheitPreDivision/10))
+
+                        self._currentTemp = kelvinToCelcius
+                        print("!DATA: \(self._currentTemp)")
+                    }
+                }
+                
+            }
         }
         completed()
     }
