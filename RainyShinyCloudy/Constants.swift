@@ -8,7 +8,7 @@
 
 import Foundation
 
-let API_CALL_TYPE = "CityName"
+let API_CALL_TYPE = "Coordinates"
 
 let BASE_URL = "http://api.openweathermap.org/data/2.5/weather?"
 
