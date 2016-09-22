@@ -8,9 +8,10 @@
 
 import Foundation
 
-let API_CALL_TYPE = "Coordinates"
+let API_CALL_TYPE = "CityName"
 
 let BASE_URL = "http://api.openweathermap.org/data/2.5/weather?"
+let BASE_URL_FORECAST = "http://api.openweathermap.org/data/2.5/forecast/daily?lat=35&lon=139&cnt=10&mode=json&appid=079f6a4d86fee21dabf0caf2af9357bf"
 
 let LATITUDE = "lat="
 let LONGITUDE = "&lon="
