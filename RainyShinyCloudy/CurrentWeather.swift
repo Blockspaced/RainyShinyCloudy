@@ -33,7 +33,7 @@ class CurrentWeather {
         dateFormatter.timeStyle = .none
             // Removing the time because by default it is returned
         let currentDate = dateFormatter.string(from: Date())
-        self._date = "Today, \(currentDate)"
+        self._date = "Today\n \(currentDate)"
         
         return _date
     }
@@ -53,7 +53,7 @@ class CurrentWeather {
     }
     
         // Creating the func that will download data
-    func downloadWeatherDetails(completed: DownloadComplete) {
+    func downloadWeatherDetails(completed: @escaping DownloadComplete) {
         // In Constants.swift a typealias for DownloadComplete was created
         // This will allow us to know when this function is completed
     
@@ -100,8 +100,10 @@ class CurrentWeather {
                 
             }
             self.printData()
+            
+            completed()
+
         }
-        completed()
     }
     
     func printData() {
