@@ -8,24 +8,8 @@
 
 import Foundation
 
-let API_CALL_TYPE = "CityName"
-
-let BASE_URL = "http://api.openweathermap.org/data/2.5/weather?"
-let BASE_URL_FORECAST = "http://api.openweathermap.org/data/2.5/forecast/daily?lat=35&lon=139&cnt=10&mode=json&appid=079f6a4d86fee21dabf0caf2af9357bf"
-
-let LATITUDE = "lat="
-let LONGITUDE = "&lon="
-let APP_ID = "&appid="
-let API_KEY = "079f6a4d86fee21dabf0caf2af9357bf"
-let CITY_STRING = "q="
-var CURRENT_WEATHER_URL: String {
-    var currentWeatherURL = ""
-    if API_CALL_TYPE == "Coordinates" {
-        currentWeatherURL = "\(BASE_URL)\(LATITUDE)-36\(LONGITUDE)123\(APP_ID)\(API_KEY)"
-    } else if API_CALL_TYPE == "CityName" {
-        currentWeatherURL = "\(BASE_URL)\(CITY_STRING)London,uk\(APP_ID)\(API_KEY)"
-    }
-    return currentWeatherURL
-}
+let BASE_URL = "https://api.darksky.net/forecast/"
+let API_KEY = "22e8b3dab1ac62c6f95fa9a1c4a015d3"
+var CURRENT_WEATHER_URL = "\(BASE_URL)\(API_KEY)/\(Location.sharedInstance.latitude!),\(Location.sharedInstance.longitude!)"
 
 typealias DownloadComplete = () -> ()

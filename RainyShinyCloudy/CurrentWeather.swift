@@ -56,8 +56,10 @@ class CurrentWeather {
     func downloadWeatherDetails(completed: @escaping DownloadComplete) {
         // In Constants.swift a typealias for DownloadComplete was created
         // This will allow us to know when this function is completed
-    
+        
+        
         let currentWeatherURL = URL(string: CURRENT_WEATHER_URL)!
+        print("!CURRENTURL: \(currentWeatherURL)")
             // Creating the Alamofire request
         Alamofire.request(currentWeatherURL, method:.get).responseJSON{ response in
             // We erased the completion block and added "response in" so that we can specify how we want to receive the response
@@ -105,8 +107,9 @@ class CurrentWeather {
     }
     
     func printData() {
-        print("!DATA: \(self._cityName!)")
-        print("!DATA: \(self._weatherType!)")
-        print("!DATA: \(self._currentTemp!)")
+        print("!URL: \(CURRENT_WEATHER_URL)")
+        print("!DATA: \(self._cityName)")
+        print("!DATA: \(self._weatherType)")
+        print("!DATA: \(self._currentTemp)")
     }
 }

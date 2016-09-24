@@ -2,7 +2,7 @@
 //  WeatherCell.swift
 //  RainyShinyCloudy
 //
-//  Created by Sandro Simes on 22/09/2016.
+//  Created by smbss on 22/09/2016.
 //  Copyright © 2016 smbss. All rights reserved.
 //
 
