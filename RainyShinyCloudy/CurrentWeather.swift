@@ -63,18 +63,21 @@ class CurrentWeather {
             // Creating the Alamofire request
         Alamofire.request(currentWeatherURL, method:.get).responseJSON{ response in
             // We erased the completion block and added "response in" so that we can specify how we want to receive the response
-            
+            print("!RESPONSE: \(response)")
                 // Every request has a response and every response has a result
             let result = response.result
-            
+            print("!RESULT: \(result)")
                 // Creating a dictionary that will contain the value of the result
                 // It will be casted in the same format as the dictionary from the API (String: AnyObject)
             if let dict = result.value as? Dictionary<String, AnyObject> {
+                print("!DICT1:\(dict)")
                 
                     // Fetching the city name and make the first letter capitalized
                 if let name = dict["name"] as? String {
                     self._cityName = name.capitalized
                 }
+                
+                print("!TIMEZONE: \(dict["timezone"])")
                 
                     // Fetching the weather dictionary from inside the dict and casting it correctly (as an array of dictionaries)
                 if let weather = dict["weather"] as? [Dictionary<String,AnyObject>] {
@@ -100,6 +103,9 @@ class CurrentWeather {
                     }
                 }
                 
+            
+            } else {
+                print("!ERROR: Dict not created")
             }
             self.printData()
             completed()
@@ -107,7 +113,6 @@ class CurrentWeather {
     }
     
     func printData() {
-        print("!URL: \(CURRENT_WEATHER_URL)")
         print("!DATA: \(self._cityName)")
         print("!DATA: \(self._weatherType)")
         print("!DATA: \(self._currentTemp)")

@@ -60,9 +60,9 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
-            print("!PERMISSION GRANTED: \(status)")
+            print("!PERMISSION GRANTED")
         } else {
-            print("!PERMISSION STATUS: \(status)")
+            print("!PERMISSION DENID")
         }
     }
     
@@ -72,10 +72,12 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     
     func downloadForecastData(completed: @escaping DownloadComplete) {
             // Downloading the forecast data for the Tableview
-        let forecastURL = URL(string: CURRENT_WEATHER_URL)
+        let forecastURL = URL(string: CURRENT_FORECAST_URL)
+        print("!URLForecast\(forecastURL)")
         Alamofire.request(forecastURL!, method: .get).responseJSON { response in
+            print("!RESPONSEfor: \(response)")
             let result = response.result
-            
+            print("!RESULTfor: \(result)")
                 // Fetching the forecast dict in the correct format
             if let dict = result.value as? Dictionary<String,AnyObject> {
                 
