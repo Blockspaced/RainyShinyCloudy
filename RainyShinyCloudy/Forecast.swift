@@ -59,7 +59,7 @@ class Forecast {
             }
             
         }
-            // Inside each day we have the "temp" dictionary that has the weather type
+            // Inside each day we have the "weather" dictionary that has the weather type
         if let weather = weatherDict["weather"] as? [Dictionary<String,AnyObject>] {
             if let main = weather[0]["main"] as? String {
                 self._weatherType = main
@@ -67,15 +67,9 @@ class Forecast {
         }
         
         if let date = weatherDict["dt"] as? Double {
-            
             let unixConvertedDate = Date(timeIntervalSince1970: date)
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .full
-            dateFormatter.dateFormat = "EEEE"
-            dateFormatter.timeStyle = .none
             self._date = unixConvertedDate.dayOfTheWeek()
         }
-        
     }
     
 }

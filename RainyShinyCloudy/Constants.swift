@@ -18,9 +18,4 @@ let API_KEY = "&appid=079f6a4d86fee21dabf0caf2af9357bf"
 var CURRENT_WEATHER_URL = "\(BASE_URL)\(LATITUDE)\(LONGITUDE)\(API_KEY)"
 var CURRENT_FORECAST_URL = "\(BASE_URL_FORECAST)\(LATITUDE)\(LONGITUDE)&cnt=10&mode=json\(API_KEY)"
 
-//let BASE_URL = "https://api.darksky.net/forecast/"
-//let API_KEY = "22e8b3dab1ac62c6f95fa9a1c4a015d3/"
-//var CURRENT_WEATHER_URL = "\(BASE_URL)\(API_KEY)\(Location.sharedInstance.latitude),\(Location.sharedInstance.longitude)"
-
-
 typealias DownloadComplete = () -> ()
