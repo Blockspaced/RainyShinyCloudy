@@ -6,6 +6,6 @@ target 'RainyShinyCloudy' do
   use_frameworks!
 
   # Pods for RainyShinyCloudy
-  pod 'Alamofire', '~> 4.0'
+  pod 'Alamofire', '~> 4.3’
 
 end

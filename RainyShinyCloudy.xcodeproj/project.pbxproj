@@ -70,10 +70,10 @@
 		AA70F61B1D88DD35004ED9AC = {
 			isa = PBXGroup;
 			children = (
-				AA70F6261D88DD36004ED9AC /* RainyShinyCloudy */,
-				AA70F6251D88DD36004ED9AC /* Products */,
-				126F6BC9D9FC25C1B3B6E1E4 /* Pods */,
 				0E8FA9DF17546016D5818996 /* Frameworks */,
+				126F6BC9D9FC25C1B3B6E1E4 /* Pods */,
+				AA70F6251D88DD36004ED9AC /* Products */,
+				AA70F6261D88DD36004ED9AC /* RainyShinyCloudy */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,19 +88,43 @@
 		AA70F6261D88DD36004ED9AC /* RainyShinyCloudy */ = {
 			isa = PBXGroup;
 			children = (
+				AAB01C541E59009400BA7853 /* Controller */,
+				AAB01C521E59008400BA7853 /* Model */,
+				AAB01C531E59008B00BA7853 /* View */,
 				AA70F6271D88DD36004ED9AC /* AppDelegate.swift */,
-				AA70F6291D88DD36004ED9AC /* WeatherVC.swift */,
-				AA70F62B1D88DD36004ED9AC /* Main.storyboard */,
 				AA70F62E1D88DD36004ED9AC /* Assets.xcassets */,
-				AA70F6301D88DD36004ED9AC /* LaunchScreen.storyboard */,
 				AA70F6331D88DD36004ED9AC /* Info.plist */,
+				AA70F6301D88DD36004ED9AC /* LaunchScreen.storyboard */,
+				AA70F62B1D88DD36004ED9AC /* Main.storyboard */,
+			);
+			path = RainyShinyCloudy;
+			sourceTree = "<group>";
+		};
+		AAB01C521E59008400BA7853 /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				AA0B5C8B1D91F22C005D34E7 /* Constants.swift */,
 				AA0B5C8D1D91F67E005D34E7 /* CurrentWeather.swift */,
 				AA0B5C8F1D93F9EA005D34E7 /* Forecast.swift */,
-				AA0B5C911D9422A9005D34E7 /* WeatherCell.swift */,
 				AA0B5C931D9430E2005D34E7 /* Location.swift */,
 			);
-			path = RainyShinyCloudy;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AAB01C531E59008B00BA7853 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA0B5C911D9422A9005D34E7 /* WeatherCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AAB01C541E59009400BA7853 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AA70F6291D88DD36004ED9AC /* WeatherVC.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +270,7 @@
 				AA70F62C1D88DD36004ED9AC /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		AA70F6301D88DD36004ED9AC /* LaunchScreen.storyboard */ = {
@@ -254,6 +279,7 @@
 				AA70F6311D88DD36004ED9AC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
