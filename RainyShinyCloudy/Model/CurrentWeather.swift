@@ -57,7 +57,7 @@ class CurrentWeather {
             // This will allow us to know when this function is completed
         let currentWeatherURL = URL(string: CURRENT_WEATHER_URL)!
             // Creating the Alamofire request
-        Alamofire.request(currentWeatherURL, method:.get).responseJSON{ response in
+        Alamofire.request(currentWeatherURL).responseJSON{ response in
             // We erased the completion block and added "response in" so that we can specify how we want to receive the response
                 // Every request has a response and every response has a result
             let result = response.result

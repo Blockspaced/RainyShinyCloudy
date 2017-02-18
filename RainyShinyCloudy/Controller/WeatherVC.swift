@@ -89,7 +89,7 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     func downloadForecastData(completed: @escaping DownloadComplete) {
         let forecastURL = URL(string: CURRENT_FORECAST_URL)
         
-        Alamofire.request(forecastURL!, method: .get).responseJSON { response in
+        Alamofire.request(forecastURL!).responseJSON { response in
             switch response.result  {
             case .success:
                 let result = response.result
